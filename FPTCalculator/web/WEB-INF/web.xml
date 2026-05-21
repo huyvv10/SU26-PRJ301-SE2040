@@ -8,6 +8,18 @@
         <servlet-name>CommonDivisorServlet</servlet-name>
         <servlet-class>controllers.CommonDivisorServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PreviousPEServlet</servlet-name>
+        <servlet-class>controllers.PreviousPEServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ElectricityServlet</servlet-name>
+        <servlet-class>controllers.ElectricityServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CurrencyExchangeServlet</servlet-name>
+        <servlet-class>controllers.CurrencyExchangeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CalculateServlet</servlet-name>
         <url-pattern>/calculator</url-pattern>
@@ -15,5 +27,17 @@
     <servlet-mapping>
         <servlet-name>CommonDivisorServlet</servlet-name>
         <url-pattern>/commondiv</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PreviousPEServlet</servlet-name>
+        <url-pattern>/peq1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ElectricityServlet</servlet-name>
+        <url-pattern>/electricity</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CurrencyExchangeServlet</servlet-name>
+        <url-pattern>/currencyexchange</url-pattern>
     </servlet-mapping>
 </web-app>
