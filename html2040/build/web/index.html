@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>SE2040 HTML PRJ301</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Studying HTML SE2040</div>
+        <h1>1. Thẻ tiêu đề H1</h1>
+        <h2>Thẻ tiêu đề H2</h2>
+        <p>Hiệp sĩ Đại Thánh giá Gioan 
+            Baotixita Lê Đức Thịnh là 
+            một trong những giáo dân tiêu 
+            biểu lan tỏa tinh thần 
+            “sống tốt đời, đẹp đạo”, 
+            nơi đức tin Công giáo gặp gỡ lòng yêu nước qua những hoạt động bác ái, sẻ chia và phụng sự cộng đồng.<br><br> 
+            Tại phiên khai mạc Đại hội đại biểu toàn quốc lần thứ XI của Mặt trận Tổ quốc Việt Nam sáng 12/5, Tổng Bí thư, Chủ tịch nước Tô Lâm đã nhấn mạnh lời kêu gọi phát huy sức mạnh đại đoàn kết toàn dân tộc, tinh thần yêu nước, ý chí tự lực, tự cường và khát vọng cống hiến để xây dựng đất nước phồn vinh, hạnh phúc, vững bước đi lên chủ nghĩa xã hội.</p>
+        <h3>Thẻ tiêu đề H3</h3>
+        <h6>Thẻ tiêu đề H6</h6>
+        <hr>
+        <H2>2. List liệt kê danh sách</h2>
+        <h3> a. Order list </h3>
+        <ol>
+            <li>Táo</li>
+            <li>Lê</li>
+            <li>Hồng</li>
+            <li>Đào</li>
+        </ol>
+        <ol>
+            <li>Táo
+                <ol>
+                    <li>Táo Tàu</li>
+                    <li>Táo Úc</li>
+                    <li>Táo Mỹ</li>
+                </ol>
+            </li>
+            <li>Lê</li>
+            <li>Hồng</li>
+            <li>Đào</li>
+        </ol> 
+        <br>
+        <h3>b. Unorder list</h3>
+        <ul>
+            <li>Gà</li>            
+            <li>Vịt</li>            
+            <li>Ngan
+                <ul>
+                    <li>Ngan Pháp</li>
+                    <li>Ngan Việt Nam</li>
+                    <li>Ngan Canada</li>
+                </ul>
+            </li>            
+            <li>Ngỗng</li>            
+        </ul><hr>
+        <H3> 3. Hyper link</h3>
+        Để truy nhập vào thông tin sinh viên, người dùng cần đăng nhập vào ...
+        <a href="http://fap.fpt.edu.vn" target="_blank"
+           title="Nhấp vào để xem chi tiết"> (xem thêm) </a> 
+        <hr>
+        <H3> 4. Image/Picture</h3>
+        <p>Chó 1:</p>
+        <img style="width:50%;height:50%;" src="https://cdn-media.sforum.vn/storage/app/media/wp-content/uploads/2024/05/anh-cho-thumbnail.jpg" alt="Ảnh con chó rất đẹp">
+        <hr>
+        <H3> 4. Image/Picture</h3>
+        <table border="1">
+            <tr>
+                <th>STT</th>
+                <th>Họ và Tên</th>
+                <th>Ngày sinh</th>
+                <th>Giới tính</th>
+                <th>Địa chỉ</th>
+                <th>Ảnh</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Vũ Văn Huy</td>
+                <td>10/10/2000</td>
+                <td>Nam</td>
+                <td>Hà Nội</td>
+                <td><img src="http://lethanhstudio.com/upload/doitac/25.jpg" alt="ảnh thẻ1" height="60" width="40" /></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Nguyễn Bảo Ngọc</td>
+                <td>15/5/2002</td>
+                <td>Nữ</td>
+                <td>Hưng Yên</td>
+                <td><img src="http://lethanhstudio.com/upload/doitac/021.jpg" alt="ảnh thẻ1" height="60" width="40" /></td>
+            </tr>
+        </table>
+        <hr>
+        <h3>5. Form input data </h3>
+        <form action="/linktoservletget" method="GET">
+            User: <input type="text" name="user" /><br><br>   
+            Password: <input type="password" name="pass" /><br>
+            <input type="submit" value="Login" />
+        </form>
+        <hr>
+        <h4>5.2. Form in table</h4>
+        <form action="/linktoservletpost" method="POST">
+            <table border="0">
+                <tr>
+                    <td>User</td>
+                    <td><input type="text" name="user" /></td>   
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="pass" /></td>   
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td><input type="number" name="age" min="18" /></td>   
+                </tr>
+                <tr>
+                    <td>Volume</td>
+                    <td><input type="range" min="0" max="100" /></td>   
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td><input type="radio" name="gender" value="Male" checked />Male
+                        <input type="radio" name="gender" value="Female" />Female
+                    </td>   
+                </tr>
+                <tr>
+                    <td>Skills</td>
+                    <td><input type="checkbox" name="skills" value="C/C++" />C/C++
+                        <input type="checkbox" name="skills" value="Java" checked />Java
+                        <input type="checkbox" name="skills" value="dotnet" />DotNet
+                        <input type="checkbox" name="skills" value="Python" />Python
+                    </td>   
+                </tr>
+                <tr>
+                    <td>Favorites</td>
+                    <td><select>
+                            <option value="all" />---All---                                
+                            <option value="dabong" />Đã bóng                                
+                            <option value="chay" selected /> Chạy                               
+                            <option value="boi" />  Bơi                              
+                            <option value="pickaball" />   Pickaball                             
+                        </select>
+                    </td>   
+                </tr>
+                <tr>
+                    <td>Others</td>
+                    <td>
+                        <textarea name="other" cols="15" rows="5" placeholder="Nhập thông điệp"></textarea>
+                    </td>   
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Login" />
+                        <input type="reset" value="Clear" />
+                    </td>   
+                </tr>
+            </table>            
+        </form>
+        <hr>
+
+    </body>
+</html>
