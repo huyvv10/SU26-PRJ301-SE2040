@@ -1,8 +1,10 @@
 
 import dal.CategoryDao;
+import dal.ProductDao;
 import java.util.ArrayList;
 import java.util.List;
 import models.Category;
+import models.Product;
 
 public class TestMain {
     public static void main(String[] args) {
@@ -13,5 +15,21 @@ public class TestMain {
         for (Category c : listCat) {
             System.out.println(c.toString());
         }
+        
+        ProductDao pdao = new ProductDao();                        
+        List<Product> listProd = new ArrayList<>();
+        listProd = pdao.getAllProducts();
+        
+        for (Product p : listProd) {
+            System.out.println(p.toString());
+        }
+        
+        System.out.println("");
+        listProd = pdao.searchProductsByName("Máy");
+        
+        for (Product p : listProd) {
+            System.out.println(p.toString());
+        }        
+        
     }
 }
