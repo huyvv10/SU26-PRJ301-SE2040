@@ -23,7 +23,7 @@ import models.Product;
  * @author VU VAN HUY
  */
 public class ShowAllProductsServlet extends HttpServlet {
-   
+    protected int nPerPage = 7;
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
@@ -68,7 +68,16 @@ public class ShowAllProductsServlet extends HttpServlet {
             ProductDao prdDao = new ProductDao();
             List<Product> prdList = new ArrayList<>();
             prdList = prdDao.getAllProducts();
-            request.setAttribute("prdList", prdList);
+            int totalProduct = prdList.size();
+            
+            String strPage = request.getParameter("page");
+            int page = (strPage==null)? 1 : Integer.parseInt(strPage);
+            int totalPages = totalProduct%nPerPage==0 ? totalProduct/nPerPage : totalProduct/nPerPage+1;
+            request.setAttribute("totalPages", totalPages);
+            
+            prdList = prdDao.getPaging(page, nPerPage);
+            request.setAttribute("prdList", prdList);         
+            
             request.getRequestDispatcher("showproducts.jsp")
                     .forward(request, response);
         } catch (Exception e) {
@@ -87,7 +96,26 @@ public class ShowAllProductsServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            String strKw = request.getParameter("txtKw");
+            String strCbCat = request.getParameter("cbCat");
+
+            CategoryDao catDao = new CategoryDao();
+            List<Category> catList = new ArrayList<>();
+            catList = catDao.getAllCategories();
+            request.setAttribute("catList", catList);
+
+            ProductDao prdDao = new ProductDao();
+            List<Product> prdList = new ArrayList<>();
+            prdList = prdDao.searchProductsByName(strKw, strCbCat);
+            request.setAttribute("prdList", prdList);
+            
+            request.getRequestDispatcher("showproducts.jsp")
+                    .forward(request, response);            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
     }
 
     /** 

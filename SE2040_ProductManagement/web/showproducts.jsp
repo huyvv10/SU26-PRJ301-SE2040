@@ -14,7 +14,8 @@
     </head>
     <body>
     <center><h1>List products!</h1></center>
-    <form action="showproducts" method="post">
+
+    <form action="showallproducts" method="post">
         <table border="0">
             <tr>
                 <td>Search name</td>
@@ -27,7 +28,7 @@
                     <select name="cbCat" id="cbCat">
                         <option value="all" id="cbAll">---All---</option>
                         <c:forEach var="c" items="${catList}">
-                        <option value="${c.catId}" id="${c.catId}">${c.catName}</option>
+                            <option value="${c.catId}" id="${c.catId}">${c.catName}</option>
                         </c:forEach>
                     </select>
                 </td>
@@ -36,6 +37,11 @@
             </tbody>
         </table>
         <br />
+        <div style="text-align: center">
+            <c:forEach begin="${1}" end="${totalPages}" var="i">
+            <a href="showallproducts?page=${i}">${i}</a>
+            </c:forEach>
+        </div>
         <table border="1">
             <thead>
                 <tr>
@@ -50,23 +56,23 @@
             </thead>
             <tbody>
                 <c:forEach var="p" items="${prdList}" >
-                <tr>
-                    <td>${p.id}</td>
-                    <td>${p.name}</td>
-                    <td>${p.qty}</td>
-                    <td>${p.price}</td>
-                    <td>${p.importDate}</td>
-                    <td>${p.catId}</td>
-                    <td>
-                        <a href="edit?pid=${p.id}">Edit |
-                        <a href="delete?pid=${p.id}">Delete
-                    </td>
-                </tr>
-                </c:forEach>
-            </tbody>
-        </table>
+                    <tr>
+                        <td>${p.id}</td>
+                        <td>${p.name}</td>
+                        <td>${p.qty}</td>
+                        <td>${p.price}</td>
+                        <td>${p.importDate}</td>
+                        <td>${p.catId}</td>
+                        <td>
+                            <a href="edit?pid=${p.id}">Edit |
+                                <a href="delete?pid=${p.id}">Delete
+                                    </td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                                </table>
 
 
-    </form>
-</body>
-</html>
+                                </form>
+                                </body>
+                                </html>

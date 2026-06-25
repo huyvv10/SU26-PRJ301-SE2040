@@ -25,8 +25,13 @@ public class TestMain {
         }
         
         System.out.println("");
-        listProd = pdao.searchProductsByName("Máy");
+        listProd = pdao.searchProductsByName("ip", "all");
         
+        for (Product p : listProd) {
+            System.out.println(p.toString());
+        }        
+        System.out.println("\n---Paging---");
+        listProd = pdao.getPaging(4, 7);
         for (Product p : listProd) {
             System.out.println(p.toString());
         }        
